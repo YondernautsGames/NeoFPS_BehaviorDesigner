@@ -17,3 +17,9 @@ Red 1 moves towards the players position.
 
 Git Commit: ecb79d3
 
+## Monday 9 March 2020, 00:47
+
+If Red touches player then player takes damage
+
+Git Commit: 71724ca
+
