@@ -11,3 +11,9 @@ We have two red cylinders. They are going to attack the player.
 
 ![Screenshot](UnityEditor.SceneHierarchyWindow_NeoFPS_BehaviourDesigner_SampleScene_v0.1_132282063807157432.png)
 
+## Sunday 8 March 2020, 23:48
+
+Red 1 moves towards the players position. 
+
+Git Commit: ecb79d3
+

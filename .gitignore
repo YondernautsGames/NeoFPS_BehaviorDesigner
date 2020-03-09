@@ -64,5 +64,6 @@ crashlytics-build.properties
 # Build
 bin/
 Assets/*
+!Assets/Scenes
 !Assets/NeoFPS_BehaviorDesigner
 !Assets/Behavior Designer/Resources
