@@ -1,0 +1,3 @@
+[submodule "Assets/3DTBD/DevLogger"]
+	path = Assets/3DTBD/DevLogger
+	url = git@github.com:3dtbd/DevLogger.git

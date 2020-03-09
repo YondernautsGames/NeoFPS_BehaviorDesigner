@@ -1,0 +1,222 @@
+{
+    "m_MouseXAxis": "Mouse X",
+    "m_MouseYAxis": "Mouse Y",
+    "m_MouseScrollAxis": "Mouse ScrollWheel",
+    "m_KeyCodes": [
+        {
+            "primary": 0,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 0,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 0,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 0,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 119,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 115,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 97,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 100,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 32,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 0,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 304,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 0,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 306,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 101,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 122,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 323,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 324,
+            "secondary": 0,
+            "context": 2
+        },
+        {
+            "primary": 325,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 114,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 0,
+            "secondary": 0,
+            "context": 1
+        },
+        {
+            "primary": 324,
+            "secondary": 0,
+            "context": 1
+        },
+        {
+            "primary": 49,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 50,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 51,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 52,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 53,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 54,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 55,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 56,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 57,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 48,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 91,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 93,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 113,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 103,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 108,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 47,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 9,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 105,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 99,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 107,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 106,
+            "secondary": 0,
+            "context": 0
+        },
+        {
+            "primary": 109,
+            "secondary": 0,
+            "context": 0
+        }
+    ]
+}

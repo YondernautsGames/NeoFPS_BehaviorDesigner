@@ -1,0 +1,11 @@
+{
+    "m_PlayerName": "Player",
+    "m_PlayerColourCode": 0,
+    "m_CrosshairColor": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+    },
+    "m_AutoSwitchWeapons": true
+}
