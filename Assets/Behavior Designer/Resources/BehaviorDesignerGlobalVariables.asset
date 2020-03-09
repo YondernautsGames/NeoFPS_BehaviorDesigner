@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -819100962, guid: 689b902eb2eb1494c92e85ea51c1ac32, type: 3}
+  m_Name: BehaviorDesignerGlobalVariables
+  m_EditorClassIdentifier: 
+  mVariableData:
+    variableStartIndex: 00000000
+    JSONSerialization: 
+    fieldSerializationData:
+      typeName: []
+      fieldNameHash: f9be55564aaa52567707a104b55e65f0
+      startIndex: 00000000010000000200000003000000
+      dataPosition: 00000000290000003500000036000000
+      unityObjects: []
+      byteData: 4265686176696f7244657369676e65722e52756e74696d652e53686172656447616d654f626a6563744e656f465053506c617965720101
+      byteDataArray: 4265686176696f7244657369676e65722e52756e74696d652e53686172656447616d654f626a6563744e656f465053506c617965720101
+  mVersion: 1.6.4

@@ -65,3 +65,4 @@ crashlytics-build.properties
 bin/
 Assets/*
 !Assets/NeoFPS_BehaviorDesigner
+!Assets/Behavior Designer/Resources
