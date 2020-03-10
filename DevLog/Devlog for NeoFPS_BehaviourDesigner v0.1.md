@@ -23,3 +23,15 @@ If Red touches player then player takes damage
 
 Git Commit: 71724ca
 
+## Monday 9 March 2020, 20:23
+
+Enemy now takes damage.
+
+Git Commit: 23c4893632856b170d504685a09f246a04111ff3
+
+![Screenshot](UnityEditor.InspectorWindow_NeoFPS_BehaviourDesigner_SampleScene_v0.1_132282841586143900.png)
+
+## Monday 9 March 2020, 21:06
+
+Added BehaviourDesignerIsAlive to test if enemy is alive, destroy the object if it is not alive.
+
