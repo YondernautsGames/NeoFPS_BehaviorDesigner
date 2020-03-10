@@ -5,9 +5,9 @@ using UnityEngine;
 namespace BehaviorDesigner
 {
     [TaskCategory("Neo FPS")]
-    [TaskDescription("Do damage to a Neo FPS cahracter.")]
-    [TaskName("Player Damage")]
-    public class BehaviourDesignerPlayerDamage : Action, NeoFPS.IDamageSource
+    [TaskDescription("Do damage to a Neo FPS character.")]
+    [TaskName("Damage Source")]
+    public class DamageSource : Action, NeoFPS.IDamageSource
     {
         public float damageAmount = 5;
         public SharedGameObject target;
