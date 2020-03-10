@@ -17,4 +17,8 @@ This integration example is intended to be dropped in to a fresh project along w
 	
 ## Integration
 
-...
+This integration provides a number of Behavior Designer tasks that make it easier to integrate Neo FPS into your project. These can be located in the "Actions/Neo FPS" and "Conditional/Neo FPS" categories.
+
+We've tried to make this as self-documenting as possible using the tooltips and documentation strings used in Behavior Designer itself. If you have questions ask them on the [Neo FPS Discord](https://discord.neofps.com/).
+
+We've also included a simple demo scene, see `NeoFPS_BehaviorDesigner_Demo`
