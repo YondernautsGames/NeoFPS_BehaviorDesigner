@@ -24,13 +24,16 @@ namespace BehaviorDesigner
                 if (currentGameObject != null)
                 {
                     healthManager = currentGameObject.GetComponent<IHealthManager>();
+                } else
+                {
+                    healthManager = null;
                 }
             }
         }
 
         public override TaskStatus OnUpdate()
-        {
-            if (healthManager.isAlive)
+        {   
+            if (healthManager != null && healthManager.isAlive)
             {
                 return TaskStatus.Success;
             }

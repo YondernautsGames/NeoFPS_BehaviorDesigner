@@ -35,7 +35,7 @@ namespace BehaviorDesigner
 
         public string description
         {
-            get { return transform.name + "inflicts damage of " + damageAmount; }
+            get { return transform.name; }
         }
         #endregion
 
