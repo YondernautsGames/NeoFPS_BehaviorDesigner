@@ -9,6 +9,7 @@ namespace BehaviorDesigner
     [TaskName("Damage Source")]
     public class DamageSource : Action, NeoFPS.IDamageSource
     {
+        [Runtime.Tasks.Tooltip("The amount of damage to be dealt.")]
         public float damageAmount = 5;
         public SharedGameObject target;
         public bool isCritical = false;
