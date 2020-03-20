@@ -15,6 +15,8 @@ namespace BehaviorDesigner
         public SharedGameObject target;
         [Runtime.Tasks.Tooltip("The minimum distance from the target before the attack can be taken.")]
         public SharedFloat minDistance = 2;
+        [Runtime.Tasks.Tooltip("The maximum distance from the target before the attack can be taken.")]
+        public SharedFloat maxDistance = 2;
         [Runtime.Tasks.Tooltip("How long to cooldown between attacks.")]
         public float attackCooldown = 2;
 
@@ -28,7 +30,7 @@ namespace BehaviorDesigner
             }
 
             float dist = Vector3.Distance(target.Value.transform.position, transform.position);
-            if (dist <= minDistance.Value)
+            if (dist >= minDistance.Value && dist <= maxDistance.Value)
             {
                 nextAttackTime = Time.time + attackCooldown;
                 return base.OnUpdate();
