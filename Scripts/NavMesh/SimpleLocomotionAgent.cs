@@ -57,7 +57,7 @@ namespace NeoFPS.BehaviourDesigner
             // Update animation parameters
             anim.SetBool(m_MoveParameterName, shouldMove);
             anim.SetFloat(m_VelocityXParameterName, velocity.x);
-            anim.SetFloat(m_VelocityXParameterName, velocity.y);
+            anim.SetFloat(m_VelocityYParameterName, velocity.y);
 
             //GetComponent<LookAt>().lookAtTargetPosition = agent.steeringTarget + transform.forward;
         }
