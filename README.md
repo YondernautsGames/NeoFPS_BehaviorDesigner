@@ -9,6 +9,12 @@ and [Behavior Designer](https://assetstore.unity.com/packages/tools/visual-scrip
 
 ## Installation
 
+:::WARNING:::
+At the current time this integration assumes that you have the [OPTIONAL] items below
+installed. This should not create errors, but may create warnings. Features not requiring
+optional components should still work. If you find this is not the case please raise an 
+issue on GitHub.
+
 This integration example is intended to be dropped in to a fresh project along with NeoFPS and Behavior Designer.
 
 1. Import NeoFPS and apply the required Unity settings using the NeoFPS Settings Wizard. You can find more information about this process [here](https://docs.neofps.com/manual/neofps-installation.html).
