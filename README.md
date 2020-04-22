@@ -60,7 +60,7 @@ If you shoot the player they will die and then respawn a few seconds later.
 There is also some demo scenes within the `Toon Soldier Scenes` folder. These require the (not free, but cheap) [Toon Soldiers](https://assetstore.unity.com/packages/3d/characters/humanoids/toon-soldiers-52220?aid=1101l866w).
 Since these scenes have a number of enemies and animations they can show off more of what is possible with Behaviour Designer.
 
-## Setting Up An NPC Character
+### Setting Up An NPC Character
 
   1. Import your character into the scene
   2. Ensure that it has a collider 

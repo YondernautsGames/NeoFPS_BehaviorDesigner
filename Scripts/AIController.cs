@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BehaviorDesigner.Runtime;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -23,12 +24,14 @@ namespace NeoFPS.BehaviourDesigner
         bool m_IsRagDoll = false;
         NavMeshAgent m_agent;
         Animator m_animator;
+        BehaviorTree m_BehaviourTree;
 
         void Start()
         {
             m_agent = GetComponent<NavMeshAgent>();
             m_Rigidbodies = GetComponentsInChildren<Rigidbody>();
             m_animator = GetComponent<Animator>();
+            m_BehaviourTree = GetComponent<BehaviorTree>();
             ToggleRagdoll(true);
         }
 
@@ -53,6 +56,7 @@ namespace NeoFPS.BehaviourDesigner
                     m_animator.SetTrigger(m_DeathParameterName);
                 }
                 m_agent.isStopped = true;
+                m_BehaviourTree.DisableBehavior();
                 StartCoroutine(ReturnFromDeath());
             } else
             {
@@ -61,6 +65,7 @@ namespace NeoFPS.BehaviourDesigner
                     ToggleRagdoll(true);
                 } else
                 {
+                    m_BehaviourTree.EnableBehavior();
                     m_animator.Play("Idle");
                 }
                 m_agent.isStopped = false;
