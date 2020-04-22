@@ -9,6 +9,12 @@ and [Behavior Designer](https://assetstore.unity.com/packages/tools/visual-scrip
 
 ## Installation
 
+:::WARNING:::
+At the current time this integration assumes that you have the [OPTIONAL] items below
+installed. This should not create errors, but may create warnings. Features not requiring
+optional components should still work. If you find this is not the case please raise an 
+issue on GitHub.
+
 This integration example is intended to be dropped in to a fresh project along with NeoFPS and Behavior Designer.
 
 1. Import NeoFPS and apply the required Unity settings using the NeoFPS Settings Wizard. You can find more information about this process [here](https://docs.neofps.com/manual/neofps-installation.html).
@@ -18,6 +24,8 @@ This integration example is intended to be dropped in to a fresh project along w
 3. Clone this repository to a folder inside the project Assets folder such as "NeoFPS_BehaviorDesigner"
 
 4. [Optional] If you want to play the demo scene you need to import [Basic Motions Free Pack](https://assetstore.unity.com/packages/3d/animations/basic-motions-free-pack-154271?aid=1101l866w) 
+
+5. [Optional] If you want to see how the integrations work with fully animated soldiers import the (not free, but cheap) [Toon Soldiers](https://assetstore.unity.com/packages/3d/characters/humanoids/toon-soldiers-52220?aid=1101l866w)
 	
 ## Integration
 
@@ -27,7 +35,7 @@ These can be located in the "Actions/Neo FPS" and "Conditional/Neo FPS" categori
 We've tried to make this as self-documenting as possible using the tooltips and documentation strings used 
 in Behavior Designer itself. If you have questions ask them on the [Neo FPS Discord](https://discord.neofps.com/).
 
-## Animations
+## Animation
 
 Included in the Scripts folder is a class to translate Nav Mesh Agent movements to animation inputs, see 
 `SimpleLocomotionAgent`. This monobehaviour can be dropped on your NPCs and it will convert movement into 
@@ -48,6 +56,25 @@ for the animations to work. Install this pack.
 You can, of course, trigger animations from directly within your Behaviour Trees, or you can integrate your
 favorite controller. 
 
-## Demo Scene
+## Demo Scenes
 
-We've included a simple demo scene, see `NeoFPS_BehaviorDesigner_Demo`
+We've included a simple demo scene, see `NeoFPS_Melee_Ragdoll_Demo`. This requires the [Basic Motions Free Pack](https://assetstore.unity.com/packages/3d/animations/basic-motions-free-pack-154271?aid=1101l866w).
+The goal of this is to show how to setup a character.
+This scene shows simple movement using a NavMesh. The character will rush to the player and attack them (no animation for attack).
+If you shoot the player they will die and then respawn a few seconds later.
+
+There is also some demo scenes within the `Toon Soldier Scenes` folder. These require the (not free, but cheap) [Toon Soldiers](https://assetstore.unity.com/packages/3d/characters/humanoids/toon-soldiers-52220?aid=1101l866w).
+Since these scenes have a number of enemies and animations they can show off more of what is possible with Behaviour Designer.
+
+### Setting Up An NPC Character
+
+  1. Import your character into the scene
+  2. Ensure that it has a collider 
+  3. Add and configure the `AIController` script
+  4. Add the `SimpleLocomotionAgent` script
+  5. Ensure your characters animation controller is setup to use the parameter names set in this script
+  6. Ensure the NavMeshAgent is setup correctly (if the model didn't have one the simple locomotion agent script will add one)
+  7. Add and configure Neo FPAS `BasicHealthManager`
+  8. Add and configure Neo FPAS `BasicDamageHandler`
+  9. Add and configure Neo FPAS `SimpleSurface`
+  10. Add an configure a Behaviour Tree

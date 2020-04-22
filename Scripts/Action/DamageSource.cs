@@ -2,16 +2,18 @@
 using BehaviorDesigner.Runtime.Tasks;
 using UnityEngine;
 
-namespace BehaviorDesigner
+namespace NeoFPS_BehaviorDesigner
 {
     [TaskCategory("Neo FPS")]
     [TaskDescription("Do damage to a Neo FPS character.")]
     [TaskName("Damage Source")]
     public class DamageSource : Action, NeoFPS.IDamageSource
     {
-        [Runtime.Tasks.Tooltip("The amount of damage to be dealt.")]
-        public float damageAmount = 5;
+
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("The target to damage.")]
         public SharedGameObject target;
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("The amount of damage to be dealt.")]
+        public float damageAmount = 5;
         public bool isCritical = false;
         public float kickDistance = 0.02f;
         public float kickRotation = 5f;
