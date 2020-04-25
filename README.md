@@ -68,13 +68,17 @@ Since these scenes have a number of enemies and animations they can show off mor
 
 ### Setting Up An NPC Character
 
+The following is a descripton of the basic steps for setting up your own model and animations to use the Behaviour Designer integrations.
+
   1. Import your character into the scene
   2. Ensure that it has a collider 
   3. Add and configure the `AIController` script
   4. Add the `SimpleLocomotionAgent` script
-  5. Ensure your characters animation controller is setup to use the parameter names set in this script
+  5. Create an `Animator Override Controller` from `NeoFPS_BehaviourDesigner/Animations/Shooter Controller with APose Placeholders`
+  6. Apply overrides for all aniation states in this controller. If you do not provide an override you will have an A Pose in that slot.
   6. Ensure the NavMeshAgent is setup correctly (if the model didn't have one the simple locomotion agent script will add one)
-  7. Add and configure Neo FPAS `BasicHealthManager`
-  8. Add and configure Neo FPAS `BasicDamageHandler`
-  9. Add and configure Neo FPAS `SimpleSurface`
-  10. Add an configure a Behaviour Tree
+  7. Add and configure Neo FPS `BasicHealthManager`
+  8. Add and configure Neo FPS `BasicDamageHandler`
+  9. Add and configure Neo FPS `SimpleSurface`
+  10. Add a Behaviour Tree component and drag `NeoFPS_BehaviourDesigner/Behaviour Trees/Seek and Destroy` into the `External Behaviour` parameter
+  11. Hit play, your character should now be animated and will seek out the player and fire when within range
