@@ -66,7 +66,7 @@ If you shoot the player they will die and then respawn a few seconds later.
 There is also some demo scenes within the `Toon Soldier Scenes` folder. These require the (not free, but cheap) [Toon Soldiers](https://assetstore.unity.com/packages/3d/characters/humanoids/toon-soldiers-52220?aid=1101l866w).
 Since these scenes have a number of enemies and animations they can show off more of what is possible with Behaviour Designer.
 
-### Setting Up An NPC Character
+## Setting Up A new NPC Character with your own Animations
 
 The following is a descripton of the basic steps for setting up your own model and animations to use the Behaviour Designer integrations.
 
