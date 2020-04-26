@@ -23,9 +23,11 @@ This integration example is intended to be dropped in to a fresh project along w
 
 3. Clone this repository to a folder inside the project Assets folder such as "NeoFPS_BehaviorDesigner"
 
-4. [Optional] If you want to play the demo scene you need to import [Basic Motions Free Pack](https://assetstore.unity.com/packages/3d/animations/basic-motions-free-pack-154271?aid=1101l866w) 
+4. There is currently a bug that means Global Veriables are not defined at import. To workaround this create a Behaviour Designer Global Variable of type GameObject with the name `NeoFPSPlayer`, see [Behaviour Designer documentation](https://opsive.com/support/documentation/behavior-designer/variables/global-variables/).
 
-5. [Optional] If you want to see how the integrations work with fully animated soldiers import the (not free, but cheap) [Toon Soldiers](https://assetstore.unity.com/packages/3d/characters/humanoids/toon-soldiers-52220?aid=1101l866w)
+5. [Optional] If you want to play the demo scene you need to import [Basic Motions Free Pack](https://assetstore.unity.com/packages/3d/animations/basic-motions-free-pack-154271?aid=1101l866w) 
+
+6. [Optional] If you want to see how the integrations work with fully animated soldiers import the (not free, but cheap) [Toon Soldiers](https://assetstore.unity.com/packages/3d/characters/humanoids/toon-soldiers-52220?aid=1101l866w)
 	
 ## Integration
 
