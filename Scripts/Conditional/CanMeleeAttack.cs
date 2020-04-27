@@ -11,7 +11,7 @@ namespace BehaviorDesigner
     [TaskName("Can Melee Attack")]
     public class CanMeleeAttack : Conditional
     {
-        [Runtime.Tasks.Tooltip("The object that we want to test for an alive status. Must have an IHealthManager attached. If set to null then the task owner will be used.")]
+        [Runtime.Tasks.Tooltip("The target we want to attack. If set to null then the task owner will be used.")]
         public SharedGameObject target;
         [Runtime.Tasks.Tooltip("The minimum distance from the target before the attack can be taken.")]
         public SharedFloat minDistance = 2;
