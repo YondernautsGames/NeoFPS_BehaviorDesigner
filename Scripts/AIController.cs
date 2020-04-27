@@ -63,11 +63,10 @@ namespace NeoFPS.BehaviourDesigner
                 if (m_UseRagdoll)
                 {
                     ToggleRagdoll(true);
-                } else
-                {
-                    m_BehaviourTree.EnableBehavior();
-                    m_animator.Play("Idle");
                 }
+
+                m_BehaviourTree.EnableBehavior();
+                m_animator.Play("Idle");
                 m_agent.isStopped = false;
             }
         }
