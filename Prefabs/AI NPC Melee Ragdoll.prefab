@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1687051475}
-  - component: {fileID: 1687051476}
   m_Layer: 0
   m_Name: RHand Mount Point
   m_TagString: Untagged
@@ -31,19 +30,6 @@ Transform:
   m_Father: {fileID: 5825686916043955554}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 11.727, y: 22.346, z: -3.0760002}
---- !u!114 &1687051476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687051474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4417b8e77d93715468faebd5515a73e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AttachedObject: {fileID: 0}
 --- !u!1 &5825686916044374066
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,6 +48,7 @@ GameObject:
   - component: {fileID: 4644502160671810245}
   - component: {fileID: 948395158}
   - component: {fileID: 606556278}
+  - component: {fileID: 532513527}
   m_Layer: 0
   m_Name: AI NPC Melee Ragdoll
   m_TagString: Untagged
@@ -253,6 +240,29 @@ MonoBehaviour:
       Version: 1.6.4
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &532513527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5825686916044374066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb8ba5ac5e7078e48838625aad16db2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WieldableRoot: {fileID: 1687051475}
+  m_WieldableRootScale: 0.5
+  m_DropTransform: {fileID: 1687051475}
+  m_DropVelocity: {x: 0, y: 2, z: 3}
+  m_SlotCount: 2
+  m_StartingSlotChoice: 0
+  m_StartingOrder: 0000000001000000
+  m_BackupItem: {fileID: 114965478898535404, guid: 8b9ed13ba7688344da7c1272f9e87ae8,
+    type: 3}
+  m_StartingItems: []
+  m_DuplicateBehaviour: 0
 --- !u!1 &5825686916044374344
 GameObject:
   m_ObjectHideFlags: 0

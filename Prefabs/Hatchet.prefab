@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6669913999457615015}
   - component: {fileID: 2435125573012178577}
   - component: {fileID: 8284306255843408488}
+  - component: {fileID: 114965478898535404}
   m_Layer: 0
   m_Name: Hatchet
   m_TagString: Untagged
@@ -77,3 +78,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &114965478898535404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7695264907289530036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3a3fbeccc52904c8e02be09fef9f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Quantity: 1
+  m_OnAddToInventory:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnRemoveFromInventory:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnQuantityChange:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ItemKey:
+    m_Value: 0
+  m_DisplayImage: {fileID: 0}
+  m_QuickSlot: -1
+  m_MaxQuantity: 1
+  m_DropObject: {fileID: 0}
