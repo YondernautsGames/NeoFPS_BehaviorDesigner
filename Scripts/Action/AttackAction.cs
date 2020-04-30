@@ -61,7 +61,7 @@ namespace NeoFPS.BehaviourDesigner
             var kicker = character.headTransformHandler.GetComponent<NeoFPS.AdditiveKicker>();
             if (kicker == null) yield return null;
 
-            m_AiAnimator.SetTrigger("Melee Attack");
+            m_AiAnimator.SetTrigger("Attack");
             m_CurrentStatus = TaskStatus.Running;
             yield return new WaitForSeconds(weapon.timeToImpact);
 

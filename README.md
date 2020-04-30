@@ -25,9 +25,11 @@ This integration example is intended to be dropped in to a fresh project along w
 
 4. There is currently a bug that means Global Veriables are not defined at import. To workaround this create a Behaviour Designer Global Variable of type GameObject with the name `NeoFPSPlayer`, see [Behaviour Designer documentation](https://opsive.com/support/documentation/behavior-designer/variables/global-variables/).
 
-5. [Optional] If you want to play the demo scene you need to import [Basic Motions Free Pack](https://assetstore.unity.com/packages/3d/animations/basic-motions-free-pack-154271?aid=1101l866w) 
+5. [Optional] If you want to play the demo scene with animations you need to import the following free animation pack: 
+[Basic Motions FREE Pack](https://assetstore.unity.com/packages/3d/animations/basic-motions-free-pack-154271?aid=1101l866w)
 
-6. [Optional] If you want to see how the integrations work with fully animated soldiers import the (not free, but cheap) [Toon Soldiers](https://assetstore.unity.com/packages/3d/characters/humanoids/toon-soldiers-52220?aid=1101l866w)
+6. [Optional] If you want to see how the integrations work with fully animated soldiers import the (not free, but cheap) 
+[Toon Soldiers](https://assetstore.unity.com/packages/3d/characters/humanoids/toon-soldiers-52220?aid=1101l866w)
 	
 ## Integration
 
@@ -72,15 +74,31 @@ Since these scenes have a number of enemies and animations they can show off mor
 
 The following is a descripton of the basic steps for setting up your own model and animations to use the Behaviour Designer integrations.
 
+### Character Setup
+
   1. Import your character into the scene
   2. Ensure that it has a collider 
-  3. Add and configure the `AIController` script
-  4. Add the `SimpleLocomotionAgent` script
-  5. Create an `Animator Override Controller` from `NeoFPS_BehaviourDesigner/Animations/Shooter Controller with APose Placeholders`
-  6. Apply overrides for all aniation states in this controller. If you do not provide an override you will have an A Pose in that slot.
-  6. Ensure the NavMeshAgent is setup correctly (if the model didn't have one the simple locomotion agent script will add one)
-  7. Add and configure Neo FPS `BasicHealthManager`
-  8. Add and configure Neo FPS `BasicDamageHandler`
-  9. Add and configure Neo FPS `SimpleSurface`
-  10. Add a Behaviour Tree component and drag `NeoFPS_BehaviourDesigner/Behaviour Trees/Seek and Destroy` into the `External Behaviour` parameter
-  11. Hit play, your character should now be animated and will seek out the player and fire when within range
+  3. Add and configure the `AIController` script (this handles things like Death states and allows configuration of the cahracter).
+  4. Ensure the NavMeshAgent is setup correctly (if the model didn't have one the simple locomotion agent script will add one)
+  5. Add and configure Neo FPS `BasicHealthManager`
+  6. Add and configure Neo FPS `BasicDamageHandler`
+  7. Add and configure Neo FPS `SimpleSurface`
+  8. Add an `AiBaseInventory` script and add available weapons to it (see `NeoFPS_BehaviourDesigner/Prefabs/Weapons)
+  9. Add a Behaviour Tree component and drag `NeoFPS_BehaviourDesigner/Behaviour Trees/Basic Combat Behaviour` into the `External Behaviour` parameter
+  
+### Animations Setup
+
+You can use any animation controller that can be driven by a `NavMeshAgent`. We provide one with the integration here that is driven by the example
+behaviour trees in `NeoFPS_BehaviourDesigner/Behaviour Trees`. Note, at the time of writing there are a very limited range of animations provided, 
+We need an animator, contributions are welcome. As noted above, you can download some free animations to provide core movement animations, but even
+then we are still incomplete.
+
+If you want to use our animation controller with the animations bundled then do the following:
+
+  1. Add an Animator component to your model and use the `NeoFPS_BehaviourDesigner/Animations/Core Controller (Override This)` controller
+  2. Add the `SimpleLocomotionAgent` script (this converts motion of the NavMeshAgent to input for the animation controller)
+  
+To use your own animations using out controller:
+
+  1. Create an `Animator Override Controller` from `NeoFPS_BehaviourDesigner/Animations/Core Controller (Override This)`
+  2. Configure each of the animators in this controller using your own animations
