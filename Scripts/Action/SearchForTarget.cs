@@ -8,13 +8,13 @@ namespace NeoFPS.BehaviourDesigner
 	[TaskCategory("Neo FPS")]
 	[TaskDescription("Search for a target by using a random search algorithm.")]
 	[TaskName("Search For Target")]
-	public class SearchForTarget : AbstractMovementAction
+	public class SearchForTarget : MovementActionBase
 	{
 		internal override bool SetOptimalNextPosition()
 		{
 			Debug.LogWarning("SearchForTarget.SetOptimalNextPosition is a simplistic forward wander behaviour at this point. Need a real search strategy.");
 
-			Vector3 targetPos = m_EnemyTarget.Value.transform.position;
+			Vector3 targetPos = m_Target.Value.transform.position;
 			Vector3 direction = transform.forward * Random.Range(-35, 35);
 			float optimalDistance = 5f;
 			Vector3 position = transform.position + (direction * optimalDistance);
