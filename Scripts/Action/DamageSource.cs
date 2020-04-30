@@ -1,17 +1,16 @@
 ﻿using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
+using System;
 using UnityEngine;
 
-namespace NeoFPS_BehaviorDesigner
+namespace NeoFPS.BehaviourDesigner
 {
     [TaskCategory("Neo FPS")]
     [TaskDescription("Do damage to a Neo FPS character.")]
     [TaskName("Damage Source")]
-    public class DamageSource : Action, NeoFPS.IDamageSource
+    [Obsolete("Use AttackAction instead.")]
+    public class DamageSource : NeoFpsActionBase, IDamageSource
     {
-
-        [BehaviorDesigner.Runtime.Tasks.Tooltip("The target to damage.")]
-        public SharedGameObject target;
         [BehaviorDesigner.Runtime.Tasks.Tooltip("The amount of damage to be dealt.")]
         public float damageAmount = 5;
         public bool isCritical = false;
@@ -52,14 +51,14 @@ namespace NeoFPS_BehaviorDesigner
         void DamageNeoFpsPlayer()
         {
             // Damage the player health
-            var health = target.Value.GetComponent<NeoFPS.IHealthManager>();
+            var health = m_Target.Value.GetComponent<NeoFPS.IHealthManager>();
             if (health == null)
                 return;
             
             health.AddDamage(damageAmount, isCritical, this);
 
             // Get character head kicker
-            var character = target.Value.GetComponent<NeoFPS.ICharacter>();
+            var character = m_Target.Value.GetComponent<NeoFPS.ICharacter>();
             if (character == null)
                 return;
             var kicker = character.headTransformHandler.GetComponent<NeoFPS.AdditiveKicker>();
@@ -67,7 +66,7 @@ namespace NeoFPS_BehaviorDesigner
                 return;
 
             // Get direction of attack
-            var direction = target.Value.transform.position - transform.position;
+            var direction = m_Target.Value.transform.position - transform.position;
             direction.y = 0;
             direction.Normalize();
 

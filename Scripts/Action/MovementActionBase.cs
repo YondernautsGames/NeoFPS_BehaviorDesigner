@@ -7,21 +7,14 @@ using System;
 
 namespace NeoFPS.BehaviourDesigner
 {
-	public abstract class AbstractMovementAction : BehaviorDesigner.Runtime.Tasks.Action
+	public abstract class MovementActionBase : NeoFpsActionBase
 	{
-		[BehaviorDesigner.Runtime.Tasks.Tooltip("The object to move, if null then the owning object will be used.")]
-		public SharedGameObject m_ActionTarget;
-		[BehaviorDesigner.Runtime.Tasks.Tooltip("The enemy target the agent is engaged with.")]
-		public SharedGameObject m_EnemyTarget;
-		[BehaviorDesigner.Runtime.Tasks.Tooltip("The maximum time between the agent reconsidering its current movement plan? The time between evaluations will typically reduce as the agent gets nearer to an enemy.")]
-		public SharedFloat m_MinEvaluationFrequency = 3;
         [BehaviorDesigner.Runtime.Tasks.Tooltip("The minimum distance between the current goal position and the proposed next goal position required to trigger a recalculation of the path.")]
-        public float m_MinDisitanceForNewPath = 1;
+        public float m_MinDistanceForNewPath = 1;
+        [BehaviorDesigner.Runtime.Tasks.Tooltip("Whether the NavMeshAgent should update its rotation during this move.")]
+        public bool m_UpdateRotation = true;
 
-
-        private GameObject prevGameObject;
-		private NavMeshAgent m_Agent;
-		protected float m_NextEvaluationTime = 0;
+        private NavMeshAgent m_NavMeshAgent;
 		private Vector3 m_GoalPosition;
 
         public Vector3 GoalPosition
@@ -29,11 +22,12 @@ namespace NeoFPS.BehaviourDesigner
             get { return m_GoalPosition; }
             set
             {
-                if (Vector3.Distance(m_GoalPosition, value) > m_MinDisitanceForNewPath)
+                if (Vector3.Distance(m_GoalPosition, value) > m_MinDistanceForNewPath)
                 {
-                    if (m_Agent.SetDestination(value))
+                    if (m_NavMeshAgent.SetDestination(value))
                     {
-                        m_Agent.isStopped = false;
+                        m_NavMeshAgent.updateRotation = m_UpdateRotation;
+                        m_NavMeshAgent.isStopped = false;
                         m_GoalPosition = value;
                     }
                 }
@@ -41,27 +35,24 @@ namespace NeoFPS.BehaviourDesigner
         }
 
 		public override void OnStart()
-		{
-			var currentGameObject = GetDefaultGameObject(m_ActionTarget.Value);
-			if (currentGameObject != prevGameObject)
-			{
-				m_Agent = currentGameObject.GetComponent<NavMeshAgent>();
-				prevGameObject = currentGameObject;
-				m_NextEvaluationTime = 0;
-			}
-		}
+        {
+            base.OnStart();
+            if (IsDirty)
+            {
+				m_NavMeshAgent = currentAiAgent.GetComponent<NavMeshAgent>();
+                IsDirty = false;
+            }
+        }
 
 		public override TaskStatus OnUpdate()
-		{
-            if (Time.realtimeSinceStartup < m_NextEvaluationTime)
+        {
+            if (!IsEvaluationDue())
             {
-                // No need to reevaluate and thus our existing movement plan is still appropriate and thus this is a success from a Behaviour tree perspective.
                 return TaskStatus.Success;
             }
 
             if (SetOptimalNextPosition())
             {
-                Debug.Log("Optimal position from which to attack updated to " + GoalPosition);
                 if (Time.realtimeSinceStartup > m_NextEvaluationTime) // if the implementation of this abstract class has not updated the evaluation time do it here.
                 {
                     m_NextEvaluationTime = Time.realtimeSinceStartup + m_MinEvaluationFrequency.Value;
@@ -69,7 +60,6 @@ namespace NeoFPS.BehaviourDesigner
                 return TaskStatus.Success;
             } else
             {
-                Debug.Log("Optimal position from which to attack not updated.");
                 // optimal position has not changed so assume our current goal is still optimal thus our movement is a success
                 return TaskStatus.Success;
             }

@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 namespace NeoFPS.BehaviourDesigner
 {
-    public class AIController : MonoBehaviour
+    public class AiBaseCharacter : MonoBehaviour, IAiCharacter
     {
         [Header("Animation Settings")]
         [SerializeField, Tooltip("The name of an animation parameter that will trigger the death animation transition")]
@@ -26,12 +26,26 @@ namespace NeoFPS.BehaviourDesigner
         Animator m_animator;
         BehaviorTree m_BehaviourTree;
 
-        void Start()
+        public IInventory inventory
+        {
+            get;
+            private set;
+        }
+
+        public IQuickSlots quickSlots
+        {
+            get;
+            private set;
+        }
+        
+        void Awake()
         {
             m_agent = GetComponent<NavMeshAgent>();
             m_Rigidbodies = GetComponentsInChildren<Rigidbody>();
             m_animator = GetComponent<Animator>();
             m_BehaviourTree = GetComponent<BehaviorTree>();
+            inventory = GetComponent<IInventory>();
+            quickSlots = GetComponent<IQuickSlots>();
             ToggleRagdoll(true);
         }
 
