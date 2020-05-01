@@ -87,7 +87,6 @@ namespace NeoFPS.BehaviourDesigner
 
         void ToggleRagdoll(bool isAnimating)
         {
-            Debug.Log("ToggleRagdoll: " + isAnimating);
             m_IsRagDoll = !isAnimating;
             if (m_MainCollider != null)
                 m_MainCollider.enabled = isAnimating;
