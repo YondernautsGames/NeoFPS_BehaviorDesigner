@@ -54,7 +54,7 @@ namespace NeoFPS.BehaviourDesigner
             }
         }
 
-        private void WieldableSelectionChanged(IQuickSlotItem item)
+        private void WieldableSelectionChanged(int slot, IQuickSlotItem item)
         {
             m_Weapon = item.gameObject.GetComponent<IAiWeapon>();
         }
